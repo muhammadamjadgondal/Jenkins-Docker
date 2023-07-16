@@ -1,5 +1,5 @@
 pipeline {
-
+    agent any
     stages {
         stage('Docker login'){
             agent { label 'worknode1'}
