@@ -1,9 +1,9 @@
-FROM nginx:latest
+FROM nginx
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+ RUN apt-get update && apt-get upgrade -y
 
-WORKDIR /var/www/html
-COPY index.html /var/www/html
+ COPY index.html /usr/share/nginx/html
 
-# VOLUME [ "/var/www/html" ]
-# EXPOSE 443/tcp 80/tcp 8080/tcp 8000/tcp
+ EXPOSE 8080
+
+ CMD ["nginx", "-g", "daemon off;"]
