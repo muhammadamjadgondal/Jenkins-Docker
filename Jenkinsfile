@@ -4,7 +4,7 @@ pipeline {
         stage('Docker login'){
             agent { label 'worknode1'}
             steps{
-                sh 'docker login -u amjadgondal --password "@mj@d@31o6"'
+                sh 'docker login -u amjadgondal -password "@mj@d@31o6"'
           }
         }
         stage('Docker Build') {
